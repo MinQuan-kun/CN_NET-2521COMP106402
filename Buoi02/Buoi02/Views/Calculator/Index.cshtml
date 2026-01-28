@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Máy tính cá nhân";
+}
+
+<h2>Máy tính cá nhân</h2>
+
+<form asp-action="Calculate">
+    <input name="SoHang01" type="number" placeholder="Nhập số 1" value="@ViewBag.So01" />
+    <select name="op">
+        <option>+</option>
+        <option>-</option>
+        <option>x</option>
+        <option>:</option>
+    </select>
+    <input name="SoHang02" type="number" placeholder="Nhập số 2" value="@ViewBag.So02" />
+    <input type="submit" value=" = " />
+    <input placeholder="Kết quả" value="@ViewBag.KetQua" />
+
+@section Scripts {
+    <script>
+			$('select[name="op"]').val('@ViewBag.Pheptinh');')
+		</script>
+}
+</form>
+
