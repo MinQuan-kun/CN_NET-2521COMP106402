@@ -20,5 +20,15 @@ namespace Buoi04.Controllers
             }
             return View();
         }
+        public IActionResult CheckEmployeeNoExists(string employeeNo)
+        {
+            // Giả sử bạn có một danh sách nhân viên để kiểm tra
+            var existingEmployeeNos = new List<string> { "EMP001", "EMP002", "EMP003" };
+            if (existingEmployeeNos.Contains(employeeNo))
+            {
+                return Json($"Mã nhân viên {employeeNo} đã tồn tại.");
+            }
+            return Json(true);
+        }
     }
 }

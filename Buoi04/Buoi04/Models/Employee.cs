@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Buoi04.Models
 {
@@ -7,6 +8,7 @@ namespace Buoi04.Models
         public int ID { get; set; }
         [Display(Name = "Mã nhân viên")]
         [StringLength(20, MinimumLength = 5, ErrorMessage = "Mã nhân viên không được vượt quá 20 ký tự.")]
+        [Remote(action: "CheckEmployeeNo", controller:"Employee", ErrorMessage = "Mã nhân viên đã tồn tại.")]
         public string EmployeeNo { get; set; }
         [Display(Name = "Họ và tên")]
         [MaxLength(100, ErrorMessage = "Họ tên không vượt quá 100 ký tự" )]
